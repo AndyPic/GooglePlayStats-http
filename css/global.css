@@ -1,0 +1,785 @@
+* {
+    box-sizing: border-box;
+}
+
+/*=======================================================================*/
+
+/*=============================== GRID SET UP ===========================*/
+
+/*=======================================================================*/
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    display: inline-block;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"]:not([class*="-no"]) {
+        width: 100%;
+        padding: 2px 10px;
+    }
+}
+
+/* Set up grid - NO STACK */
+
+.col-1-no {
+    width: 8.33%;
+}
+
+.col-2-no {
+    width: 16.66%;
+}
+
+.col-3-no {
+    width: 25%;
+}
+
+.col-4-no {
+    width: 33.33%;
+}
+
+.col-5-no {
+    width: 41.66%;
+}
+
+.col-6-no {
+    width: 50%;
+}
+
+.col-7-no {
+    width: 58.33%;
+}
+
+.col-8-no {
+    width: 66.66%;
+}
+
+.col-9-no {
+    width: 75%;
+}
+
+.col-10-no {
+    width: 83.33%;
+}
+
+.col-11-no {
+    width: 91.66%;
+}
+
+.col-12-no {
+    width: 100%;
+}
+
+/*=======================================================================*/
+
+/*================================ GUI SET UP ===========================*/
+
+/*=======================================================================*/
+
+h1, h2, h3, p {
+    margin: 0.1em 0em;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+button {
+    padding: 13px 13px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 600;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 13px 13px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 600;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container-fullscreen {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1280px;
+}
+
+.shadow1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.shadow2 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .4), 0 2px 10px 0 rgba(0, 0, 0, .4);
+}
+
+.padRL5 {
+    padding: 0 5px;
+}
+
+.padTB5 {
+    padding: 5px 0;
+}
+
+.padR5 {
+    padding-right: 5px;
+}
+
+.padL5 {
+    padding-left: 5px;
+}
+
+.padT5 {
+    padding-top: 5px;
+}
+
+.padB5 {
+    padding-bottom: 5px;
+}
+
+.padRL10 {
+    padding: 0 10px;
+}
+
+.padTB10 {
+    padding: 10px 0;
+}
+
+.padR10 {
+    padding-right: 10px;
+}
+
+.padL10 {
+    padding-left: 10px;
+}
+
+.padT10 {
+    padding-top: 10px;
+}
+
+.padB10 {
+    padding-bottom: 10px;
+}
+
+.taC {
+    text-align: center;
+}
+
+.taR {
+    text-align: right;
+}
+
+.taL {
+    text-align: left;
+}
+
+.posRel {
+    position: relative;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background: var(--clr-offWhite);
+    overflow-wrap: break-word;
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 220px;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 250px) {
+    body {
+        padding-bottom: 300px;
+    }
+}
+
+body.darkmode {
+    background: var(--clr-offBlack);
+    color: var(--clr-lightGrey);
+}
+
+body.darkmode button {
+    color: var(--clr-lightGrey);
+}
+
+body.darkmode .btn {
+    color: var(--clr-lightGrey);
+}
+
+body.darkmode .navbar, body.darkmode #footer {
+    background: var(--clr-darkGrey95);
+    color: var(--clr-lightGrey);
+}
+
+body.darkmode #searchdiv input {
+    background: var(--clr-darkOffBlack);
+    color: var(--clr-lightGrey);
+}
+
+body.darkmode h1:not(#login-title h1), body.darkmode h2, body.darkmode p:not(#login-title p), body.darkmode h3 {
+    color: var(--clr-lightGrey);
+}
+
+body.darkmode #menudarkmode {
+    color: var(--clr-yellow);
+}
+
+.menuitem:hover:not(.notme), .menuitem:hover .dropbtn, .navright a:hover, [id*="arrow-"]:hover, #app-search~button:hover, [id*="allapps-arr"]:hover, button:hover, .btn:hover {
+    background: var(--clr-green)!important;
+    color: black!important;
+}
+
+body.darkmode .menuitem:hover:not(.notme), body.darkmode .menuitem:hover .dropbtn, body.darkmode .navright a:hover, body.darkmode [id*="arrow-"]:hover, body.darkmode #app-search~button:hover, body.darkmode [id*="allapps-arr"]:hover, body.darkmode button:hover, body.darkmode .btn:hover {
+    background: black!important;
+    color: var(--clr-yellow)!important;
+}
+
+body.darkmode #menudarkmode:hover {
+    color: var(--clr-lightGrey);
+}
+
+.dropdown-content a:hover {
+    background-color: var(--clr-lightGrey);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 666;
+    width: 100%;
+    height: 50px;
+    background: var(--clr-blue95);
+    color: white;
+    font-size: 24px;
+}
+
+.logoimage {
+    height: 60px;
+    width: 60px;
+    margin: 6px;
+    background-image: url(../imgs/google-play.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.logoimage:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(1px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(1px, 0, 0);
+    }
+}
+
+.dropbtn {
+    padding: 10px 16px;
+    font-weight: bolder;
+    border: none;
+}
+
+.dropdown {
+    position: absolute;
+    display: none;
+    right: 150px;
+    top: 50px;
+    background: var(--clr-blue95);
+}
+
+body.darkmode .dropdown {
+    background-color: var(--clr-darkGrey);
+}
+
+.navbar.navsearch .dropdown {
+    right: 50px;
+}
+
+.dropdown a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 10px;
+    color: inherit;
+}
+
+.spacer {
+    display: none;
+    padding-top: 4px!important;
+    background-color: var(--clr-green);
+}
+
+body.darkmode .spacer {
+    background-color: var(--clr-yellow);
+}
+
+.andy-container-outer:hover .dropdown {
+    display: block;
+}
+
+.hovermenu {
+    padding: 8px 0;
+    font-weight: bolder;
+    min-width: 160px;
+    text-align: center;
+}
+
+.popout {
+    font-size: 0.75em;
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.andy-container:hover .popout {
+    display: block;
+}
+
+.andy-container-outer:hover #menumenu, .andy-container:hover .hovermenu {
+    background: var(--clr-green);
+    color: black;
+}
+
+body.darkmode .andy-container-outer:hover #menumenu, body.darkmode .andy-container:hover .hovermenu {
+    background: black;
+    color: var(--clr-yellow);
+}
+
+.popout a:hover {
+    background-color: var(--clr-lightGrey)!important;
+}
+
+body.darkmode .popout a:hover {
+    background-color: var(--clr-lightGrey)!important;
+    color: black!important;
+}
+
+#menumenu, #hovermenu1, #hovermenu2, #hovermenu3, #hovermenu4, .dropdown #menulogin, .dropdown #menudarkmode {
+    display: none;
+}
+
+@media only screen and (max-width: 647px) {
+    #menumenu {
+        display: block;
+    }
+    .spacer {
+        display: block;
+    }
+    #hovermenu1 {
+        display: block;
+    }
+    #menu1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 573px) {
+    #hovermenu2 {
+        display: block;
+    }
+    #menu2 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    #hovermenu3 {
+        display: block;
+    }
+    #menu3 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 373px) {
+    #hovermenu4 {
+        display: block;
+    }
+    #menu4 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    #menudarkmode {
+        display: none;
+    }
+    .dropdown #menudarkmode {
+        display: inline-block;
+    }
+    .dropdown {
+        right: 100px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    #menulogin {
+        display: none;
+    }
+    .dropdown #menulogin {
+        display: inline-block;
+    }
+    .dropdown {
+        right: 50px;
+    }
+}
+
+.navbar.navsearch .dropdown .hovermenu, .navbar.navsearch #menumenu, .spacer {
+    display: block!important;
+}
+
+.navbar.navsearch .dropdown #menudarkmode, .navbar.navsearch .dropdown #menulogin {
+    display: inline-block!important;
+}
+
+.navleft .menuitem {
+    float: left;
+}
+
+.navright .menuitem, .navright .dropdown .menuitem {
+    float: right;
+    width: 50px;
+    padding: 13px 13px;
+}
+
+.navright .dropdown .menuitem {
+    float: unset;
+}
+
+.dropdown .navright .menuitem {
+    display: inline-block;
+}
+
+.navright .menuitem:not(#menumenu) {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 160px;
+    z-index: 1;
+    font-size: 0.75em;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#footer {
+    min-height: 90px;
+    text-align: center;
+    padding-bottom: 20px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, .16), 0 -2px 10px 0 rgba(0, 0, 0, .12);
+    background: var(--clr-blue95);
+    max-height: calc(100% - 74px);
+    overflow-y: auto;
+}
+
+body.darkmode [id*="arrow-"] {
+    color: inherit;
+}
+
+#footer a, #footer h3, #footer h2, #footer p, #footer button {
+    color: white;
+}
+
+body.darkmode #footer a, body.darkmode #footer h3, body.darkmode #footer h2, body.darkmode #footer p, body.darkmode #footer button {
+    color: inherit;
+}
+
+#footer h3 {
+    padding: 8px 0px;
+}
+
+#footer a {
+    display: block;
+    font-size: 18px;
+    margin: 8px 0px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#footer a:hover {
+    font-weight: bold;
+}
+
+body.darkmode #footer a {
+    color: var(--clr-lightGrey);
+}
+
+#footer .seperator {
+    border-bottom: unset;
+    border-top: 1px solid white;
+    opacity: 1;
+    padding-bottom: 40px;
+    width: 98%;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+#footer .logoimage {
+    height: 160px;
+    width: 160px;
+}
+
+@media only screen and (max-width: 768px) {
+    #footer, #footer h3, #footer h2, #footer a, #footer [class*="col-"], #footer .seperator {
+        padding: 0px;
+        margin: 0px auto;
+    }
+}
+
+#page-body {
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+
+/* Fix mouseover getting stuck when in mobile mode */
+
+@media(hover: hover) and (pointer: fine) {}
+
+.menuitem:hover .dropdown-content {
+    display: block;
+}
+
+#searchdiv {
+    position: absolute;
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 100px;
+    z-index: -1;
+    cursor: default;
+}
+
+#searchdiv input {
+    height: 30px;
+    margin-top: 10px;
+    padding: 0px 0px 0px 12px;
+    overflow: hidden;
+    white-space: nowrap;
+    background: var(--clr-offWhite);
+    color: var(--clr-midGrey);
+    font-weight: 400;
+    font-size: 13.5pt;
+    border: none;
+    outline: none;
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Hides all menus when JS enables searchbar */
+
+.navbar.navsearch [id*="menu"]:not(.menuitem#menusearch) {
+    display: none;
+}
+
+#jumpToTop {
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 666;
+    position: fixed;
+    left: 4%;
+    bottom: 4%;
+}
+
+body.darkmode #jumpToTop {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/*
+This pop-up CSS taken / adapted from W3 School!!!
+*/
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 666;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*
+END OF STUFF FROM W3 SCHOOL
+*/
+
+.hidden {
+    display: none;
+}
+
+.clearer {
+    clear: both;
+}
+
+.search-container {
+    position: absolute;
+    top: 38px;
+    left: 2px;
+    width: 60%;
+    max-width: 560px;
+    background: white;
+    z-index: 666;
+}
+
+.filter-search {
+    padding: 6px;
+    cursor: pointer;
+}
+
+.filter-search:hover {
+    background: var(--clr-lightGrey);
+}

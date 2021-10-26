@@ -1,0 +1,115 @@
+/*=======================================================================*/
+
+/* LOGIN PAGE */
+
+/*=======================================================================*/
+
+.login-container {
+    background: var(--clr-cream);
+    max-width: 510px;
+    text-align: center;
+    padding: 10px 30px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body.darkmode .login-container {
+    background-color: var(--clr-darkGrey);
+}
+
+@media only screen and (max-width: 550px) {
+    .login-container {
+        width: 90%;
+        padding: 10px 10px;
+    }
+}
+
+#login-title h1 {
+    font-size: 38px;
+}
+
+.login-container input {
+    border-radius: 0px;
+    border: 1px solid var(--clr-lightGrey);
+    outline: none;
+    text-align: left;
+    padding: 0px 10px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+}
+
+.login-container button {
+    cursor: pointer;
+    border-radius: 0px;
+    border: 2px solid black;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+}
+
+.login-container button:hover {
+    background-color: #ddd;
+}
+
+.login-container a {
+    color: black;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login-container a:hover {
+    color: rgb(40, 179, 234);
+}
+
+.login-container .row .col-2 {
+    text-align: center;
+}
+
+.seperator {
+    border-top: 1px solid black;
+    position: relative;
+    margin-top: 14px;
+    text-align: center;
+    opacity: .2;
+}
+
+#or {
+    font-weight: lighter;
+    font-size: 22px;
+}
+
+.logoimage-transparent {
+    background-image: url(../imgs/google-play-nobg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 0;
+    width: 35%;
+    padding-top: 35%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login-container p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.login-container p a {
+    display: inline-block;
+    width: fit-content;
+}

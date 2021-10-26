@@ -1,0 +1,97 @@
+.pitch-container {
+    background: var(--clr-cream) url(../imgs/google-play-nobg.png) no-repeat;
+    background-size: 50px;
+    background-position: 98% 2%;
+    width: 75%;
+    min-width: 510px;
+    text-align: center;
+    padding: 10px 30px 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body.darkmode .pitch-container {
+    background-color: var(--clr-darkGrey);
+}
+
+@media only screen and (max-width: 540px) {
+    .pitch-container {
+        width: 98%;
+        min-width: unset;
+        padding: 10px 20px;
+    }
+}
+
+.pitch-title {
+    margin: 20px 0 14px 0;
+}
+
+.pitch-container input, .pitch-container textarea {
+    margin-bottom: 10px;
+    border-radius: 0px;
+    border: 1px solid var(--clr-lightGrey);
+    outline: none;
+    text-align: left;
+    padding: 0px 10px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+}
+
+.pitch-container textarea {
+    display: block;
+    resize: vertical;
+    max-height: 512px;
+    min-height: 100px;
+}
+
+.pitch-container button {
+    cursor: pointer;
+    border-radius: 0px;
+    border: 2px solid black;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0 14px 0;
+    background: var(--clr-offWhite);
+}
+
+.pitch-container a {
+    color: black;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pitch-container a:hover {
+    color: rgb(40, 179, 234);
+}
+
+.pitch-container .row .col-2 {
+    text-align: center;
+}
+
+#app-name-input, .input-container {
+    width: 50% !important;
+    float: left;
+}
+
+#app-genre-input {
+    width: 100%;
+}
+
+.search-container {
+    top: 50px !important;
+    left: 0px !important;
+}
+
+.popuptext {
+    bottom: 65px !important;
+}

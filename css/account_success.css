@@ -1,0 +1,12 @@
+.suc-container {
+    text-align: center;
+}
+
+#login-button {
+    margin-top: 18px;
+    background: var(--clr-blue);
+}
+
+body.darkmode #login-button {
+    background: var(--clr-darkGrey);
+}

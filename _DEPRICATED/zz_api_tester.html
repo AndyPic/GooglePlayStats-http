@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac-md5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/enc-base64.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="ajax/fetchers.js"></script>
+    <title>Document</title>
+    <script>
+
+        /**
+         * 
+         */
+        function generateSignature(messages, apiKey) {
+            var innerArray;
+            var outerArray = new Array();
+            var object = new Object();
+            // Sort a-z
+            for (var loop = 0; loop < messages.length; loop++) {
+                innerArray = messages[loop].split("=");
+
+                object = {
+                    key: innerArray[0],
+                    value: innerArray[1]
+                };
+
+                outerArray.push(object);
+            }
+            // Sort alphabetically by key with comparator
+            outerArray.sort(
+                function (a, b) {
+                    if (a.key < b.key) {
+                        return -1;
+                    } else if (a.key > b.key) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                });
+
+            // Concatonate
+            var message = "";
+            for (loop = 0; loop < outerArray.length; loop++) {
+                message += outerArray[loop].key;
+                message += outerArray[loop].value;
+            }
+
+            // Hash
+            var signature = CryptoJS.HmacMD5(message, apiKey);
+            signature = CryptoJS.enc.Base64.stringify(signature);
+
+            // URL encode to send
+            signature = encodeURIComponent(signature);
+
+            return signature;
+        }
+    </script>
+
+    <script>
+
+        /**
+         * method = PUT, POST, DELETE
+         * url = users.php OR apps/users.php etc.
+         * inputs = array of name => value strings eg. "data=10"
+         */
+        var goFetch = async (method, url, inputs) => {
+            method = method.toUpperCase();
+
+            url = "http://apickard01.lampt.eeecs.qub.ac.uk/API/";
+            url += endpoint;
+
+            obj = new Object()
+            data = new Array()
+            for (loop = 0; loop < inputs.length; loop++) {
+                splitArray = inputs[loop].split("=")
+
+                obj = {
+                    key: splitArray[0],
+                    value: splitArray[1]
+                };
+
+                data.push(obj)
+            }
+
+            const response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/JSON'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(() => {
+
+                }).catch(() => {
+
+                });
+
+            return response.json()
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>GET</h1>
+    <form action="api/request.php" method="GET" id="get-form">
+
+        <input type="text" class="message-input" name="data" placeholder="App num">
+    </form>
+    <button onclick="submitForm('get-form')">Submit</button>
+
+</body>
+<script>
+    async function submitForm(formName) {
+        form = document.getElementById(formName);
+        method = form.getAttribute('method')
+        apiKey = null
+        inputs = []
+        for (loop = 0; loop < form.elements.length; loop++) {
+
+            nameAttr = form.elements[loop].getAttribute('name');
+            value = form.elements[loop].value;
+
+            if (nameAttr != "key" && nameAttr != null) {
+                inputs.push(nameAttr + "=" + value);
+            } else if (nameAttr == "key") {
+                apiKey = value;
+            }
+        }
+
+        if (apiKey != null) {
+            sig = generateSignature(inputs, apiKey);
+            inputs.push("sig=" + sig);
+        }
+
+        response = goGet("apps/data.php", inputs);
+        console.log(response)
+
+        console.log(response.data[0])
+    }
+</script>
+
+</html>

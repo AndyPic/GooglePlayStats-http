@@ -1,0 +1,237 @@
+/*=======================================================================*/
+
+/* INDEX PAGE */
+
+/*=======================================================================*/
+
+#landing {
+    /* height - padding/margin for top bar */
+    min-height: calc(100vh - 80px);
+    position: relative;
+    text-align: center;
+    padding-bottom: 120px;
+    /*background-image: linear-gradient(180deg, rgb(40, 179, 234), rgb(241, 91, 108));*/
+}
+
+#socials1 {
+    margin-top: 20px;
+}
+
+#socials2 {
+    margin-top: 60px;
+}
+
+@media only screen and (max-width: 768px) {
+    #socials2 {
+        margin-top: -10px;
+    }
+}
+
+.socialicon {
+    float: left;
+    margin-left: 8px;
+    padding-top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 60px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20%;
+}
+
+.socialicon:hover {
+    opacity: 0.8;
+}
+
+.social-text {
+    margin-left: 90px;
+}
+
+#fb {
+    background-color: rgb(59, 89, 152);
+}
+
+#ig {
+    background-image: linear-gradient(120deg, rgb(64, 93, 230), rgb(88, 81, 219), rgb(131, 58, 180), rgb(193, 53, 132), rgb(225, 48, 108), rgb(253, 29, 29), rgb(245, 96, 64), rgb(247, 119, 55), rgb(252, 175, 69), rgb(255, 220, 128));
+}
+
+#twi {
+    background-color: rgb(29, 161, 242);
+}
+
+#linkd {
+    background-color: #0072b1;
+}
+
+#disc {
+    padding-top: 14px;
+    background-color: #7289DA;
+}
+
+#landing-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgb(241, 91, 108);
+}
+
+#landing-bar h2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0px;
+    text-align: center;
+    color: white;
+}
+
+.para {
+    background-image: url("https://placeimg.com/1000/1000/tech");
+    height: 30vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#afterpara {
+    min-height: calc(100vh - 80px);
+    padding-top: 40px;
+    text-align: center;
+}
+
+#afterpara-loged {
+    padding-top: 40px;
+    text-align: center;
+}
+
+#signup-button {
+    height: 60px;
+    width: 40%;
+    max-width: 360px;
+    margin: 0px auto;
+    background-color: rgb(40, 179, 234);
+    outline: none;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .para {
+        background-attachment: scroll;
+        Min-height: 250px;
+    }
+    #landing {
+        height: auto;
+    }
+}
+
+/*=======================================================================*/
+
+.slideshow {
+    margin: 16px auto 0px auto;
+    height: auto;
+    max-width: 100%;
+    position: relative;
+}
+
+.slides {
+    width: 100%;
+    /*height: 100%;*/
+}
+
+#slidenav {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    color: white;
+    font-size: 20px;
+}
+
+#slide-right {
+    float: right;
+    /*border-left: 1px solid rgb(200, 200, 200);*/
+}
+
+#slide-right:hover {
+    box-shadow: 16px 0px 50px -40px #252525 inset;
+}
+
+#slide-left {
+    float: left;
+}
+
+#slide-left:hover {
+    box-shadow: -16px 0px 50px -40px #252525 inset;
+}
+
+[id*="slidealt-"] {
+    font-size: 50px;
+    opacity: 0.5;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#slidealt-right {
+    float: right;
+    margin-right: 10px;
+}
+
+#slidealt-left {
+    float: left;
+    margin-left: 10px;
+}
+
+.slide-indicator {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    height: 26px;
+    width: 26px;
+    border: 2px solid white;
+    border-radius: 50%;
+    opacity: .6;
+}
+
+#slide-indicator-on {
+    background-color: white;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .slide-indicator:hover {
+        opacity: 100%;
+        background-color: white;
+    }
+    [id*="slidealt-"]:hover {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    [id*="slidealt-"] {
+        font-size: 7.1vw;
+    }
+    .slide-indicator {
+        margin-top: 6px;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    [id*="slidealt-"] {
+        font-size: 27px;
+    }
+}
+
+#blue-phone, #white-phone {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    #blue-phone, #white-phone {
+        display: none;
+    }
+
+    #bottom-para {
+        margin-top: 20px;
+    }
+}

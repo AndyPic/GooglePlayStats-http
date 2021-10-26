@@ -1,0 +1,15 @@
+:root {
+    --clr-red: rgb(241, 91, 108);
+    --clr-green: rgb(82, 232, 149);
+    --clr-blue: rgb(40, 179, 234);
+    --clr-blue95: rgba(40, 179, 234, .95);
+    --clr-cream: rgb(252, 224, 162);
+    --clr-yellow: rgb(255, 217, 0);
+    --clr-darkOffBlack: rgb(25, 25, 25);
+    --clr-offBlack: rgb(37, 37, 37);
+    --clr-offWhite: rgb(245, 245, 245);
+    --clr-darkGrey: rgb(50, 50, 50);
+    --clr-darkGrey95: rgba(50, 50, 50, .95);
+    --clr-midGrey: rgb(100, 100, 100);
+    --clr-lightGrey: rgb(200, 200, 200);
+}
